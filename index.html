@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Márcio ❤️ Fábio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:#fff7f9;
+    color:#333;
+    overflow-x:hidden;
+}
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.45)
+    ),
+    url("foto1.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:30px;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.subtitle{
+    font-size:1.2rem;
+    margin-bottom:25px;
+}
+
+.message{
+    font-size:1.3rem;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.counter-box{
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(10px);
+    border-radius:25px;
+    padding:25px;
+    margin-top:20px;
+}
+
+.counter-number{
+    font-size:4rem;
+    font-weight:bold;
+    color:#ff7aa8;
+}
+
+.section{
+    padding:60px 20px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2rem;
+    margin-bottom:30px;
+    color:#e91e63;
+}
+
+.spotify{
+    max-width:800px;
+    margin:0 auto 50px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+.final-message{
+    text-align:center;
+    padding:80px 20px;
+    font-size:1.4rem;
+    line-height:2;
+    color:#b0004f;
+}
+
+.heart{
+    position:fixed;
+    top:-20px;
+    color:#ff6b9a;
+    animation:fall linear forwards;
+    pointer-events:none;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
+    }
+}
+
+@media(max-width:768px){
+
+h1{
+    font-size:2.8rem;
+}
+
+.message{
+    font-size:1.1rem;
+}
+
+.counter-number{
+    font-size:3rem;
+}
+
+.gallery img{
+    height:260px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Márcio ❤️ Fábio</h1>
+
+<p class="subtitle">
+Desde 19/07/2025
+</p>
+
+<p class="message">
+Feliz dia dos namorados!<br>
+Obrigado por todos os momentos que vivemos juntos.<br>
+Você faz meus dias mais felizes ❤️
+</p>
+
+<div class="counter-box">
+<div>Já compartilhamos</div>
+
+<div class="counter-number" id="dias">
+0
+</div>
+
+<div>dias juntos ❤️</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+🎵 Nossa Música
+</h2>
+
+<div class="spotify">
+
+<!-- COLE AQUI O PLAYER DO SPOTIFY -->
+
+<iframe
+style="border-radius:12px"
+src="COLE_AQUI_O_LINK_DO_SPOTIFY"
+width="100%"
+height="152"
+frameBorder="0"
+allowfullscreen=""
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe>
+
+</div>
+
+<h2 class="section-title">
+📸 Nossos Momentos
+</h2>
+
+<div class="gallery">
+
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+<img src="foto4.jpg">
+<img src="foto5.jpg">
+<img src="foto6.jpg">
+<img src="foto7.jpg">
+<img src="foto8.jpg">
+
+</div>
+
+</section>
+
+<section class="final-message">
+
+❤️
+
+<br><br>
+
+Obrigado por transformar os dias comuns
+nas minhas memórias favoritas.
+
+<br><br>
+
+Que venham muitos mais dias,
+viagens, risadas e momentos juntos.
+
+<br><br>
+
+Eu te amo.
+
+❤️
+
+</section>
+
+<script>
+
+const inicio = new Date("2025-07-19");
+const hoje = new Date();
+
+const dias = Math.floor(
+(hoje - inicio) / (1000 * 60 * 60 * 24)
+);
+
+document.getElementById("dias").innerText = dias;
+
+function criarCoracao(){
+
+const heart = document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML = "❤️";
+
+heart.style.left = Math.random() * 100 + "vw";
+
+heart.style.fontSize =
+(Math.random() * 20 + 10) + "px";
+
+heart.style.animationDuration =
+(Math.random() * 5 + 5) + "s";
+
+document.body.appendChild(heart);
+
+setTimeout(() => {
+heart.remove();
+},10000);
+
+}
+
+setInterval(criarCoracao,500);
+
+</script>
+
+</body>
+</html>
